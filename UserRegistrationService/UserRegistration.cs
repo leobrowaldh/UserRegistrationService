@@ -1,20 +1,36 @@
-﻿namespace UserRegistrationService;
+﻿using System.Text.RegularExpressions;
+
+namespace UserRegistrationService;
 
 public class UserRegistration
 {
-	private List<User> _users  = [];
+	public List<User> Users { get; set; } = [];
 	public string AddNewUser(string userName, string password, string email)
 	{
 		return "";
 	}
 
+	/// <summary>
+	/// Verifies the username does not allready exist in the Users list
+	/// </summary>
+	/// <param name="username"></param>
 	public bool IsUniqueUsername(string username)
-	{
-		return false;
+	{	
+		User? uniqueUser = Users.FirstOrDefault(u => u.Username == username);
+		return uniqueUser == null;
 	}
+
+	/// <summary>
+	/// Verifies username only contains alphanumerical characters, and is between 5 and 20 characters long.
+	/// </summary>
+	/// <param name="username"></param>
 	public bool IsValidUsername(string username)
 	{
-		return false;
+		bool isValid = false;
+		string nonAlphaNumericalPattern = @"[^a-zA-Z0-9]";
+		bool isAlphaNumerical = !Regex.IsMatch(username, nonAlphaNumericalPattern);
+		isValid = isAlphaNumerical && username.Length >= 5 && username.Length <= 20;
+		return isValid;
 	}
 	public bool IsValidPassword(string password)
 	{
