@@ -5,9 +5,38 @@ namespace UserRegistrationService;
 public class UserRegistration
 {
 	public List<User> Users { get; set; } = [];
-	public string AddNewUser(string userName, string password, string email)
+
+	/// <summary>
+	/// If the provided parameters are correctly verified, a new user is added to the Users list.
+	/// </summary>
+	/// <param name="username"></param>
+	/// <param name="password"></param>
+	/// <param name="email"></param>
+	/// <returns>A message to confirm the user was added successfully, or a message indicating what went wrong.</returns>
+	public string AddNewUser(string username, string password, string email)
 	{
-		return "";
+		if ( !IsValidUsername(username) )
+		{
+			return "Incorrect Username, must be 5-10 alphanumerical characters long";
+		}
+		else if (!IsUniqueUsername(username))
+		{
+			return "Username allready taken, try another";
+		}
+		else if (!IsValidPassword(password))
+		{
+			return "Incorrect Password, must be at least 8 characters long and must include special characters";
+		}
+		else if (!IsValidEmail(email))
+		{
+			return "Incorrect email, must follow the format myemail@example.com";
+		}
+		else
+		{
+			User userToAdd = new User() { Username = username, Email = email, Password = password};
+			Users.Add(userToAdd);
+			return $"User {username} added successfully";
+		}
 	}
 
 	/// <summary>

@@ -55,6 +55,7 @@ public class AddNewUserTests
 		Assert.AreEqual(message, "Incorrect email, must follow the format myemail@example.com");
 	}
 
+	[TestMethod]
 	public void AddallreadyExistingValidUser_ShouldReturnExpectedMessage()
 	{
 		//Arrange
