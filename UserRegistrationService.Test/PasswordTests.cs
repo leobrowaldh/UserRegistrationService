@@ -1,6 +1,7 @@
 ﻿namespace UserRegistrationService.Test;
 
-internal class PasswordTests
+[TestClass]
+public class PasswordTests
 {
 	[DataTestMethod]
 	[DataRow("AveryGoodPassword49582*")]

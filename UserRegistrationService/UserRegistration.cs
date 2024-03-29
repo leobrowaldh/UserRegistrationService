@@ -28,13 +28,21 @@ public class UserRegistration
 	{
 		bool isValid = false;
 		string nonAlphaNumericalPattern = @"[^a-zA-Z0-9]";
+		//If the regular expression is matched, then there is a non alphanumerical character in the string
+		//So if there is no match, then there are only alphanumerical characters in the string.
 		bool isAlphaNumerical = !Regex.IsMatch(username, nonAlphaNumericalPattern);
 		isValid = isAlphaNumerical && username.Length >= 5 && username.Length <= 20;
 		return isValid;
 	}
 	public bool IsValidPassword(string password)
 	{
-		return false;
+		bool isValid = false;
+		string nonAlphaNumericalPattern = @"[^a-zA-Z0-9]";
+		//If the regular expression is matched, then there is a non alphanumerical character in the string
+		//a non alphanumerical character is by definition a special character.
+		bool thereIsASpecialCharacter = Regex.IsMatch(password, nonAlphaNumericalPattern);
+		isValid = thereIsASpecialCharacter && password.Length >= 8;
+		return isValid;
 	}
 	public bool IsValidEmail(string email)
 	{
