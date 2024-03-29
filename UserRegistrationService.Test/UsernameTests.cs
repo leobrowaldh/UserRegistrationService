@@ -49,9 +49,9 @@ namespace UserRegistrationService.Test
 		[DataTestMethod]
 		[DataRow("Lala58")]
 		[DataRow("aaaaaaaa")]
-		[DataRow("11111")] //5 chars
+		[DataRow("11111")] //edge case: 5 chars
 		[DataRow("DqDq345")]
-		[DataRow("aaaaaaaaaaaaaaaaaaaa")] //20 chars
+		[DataRow("aaaaaaaaaaaaaaaaaaaa")] //edge case: 20 chars
 		public void IsValidUsernameTestingValidUsernames_ShouldReturnTrue(string validUsername)
 		{
 			//Arrange
