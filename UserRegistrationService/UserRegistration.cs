@@ -34,6 +34,11 @@ public class UserRegistration
 		isValid = isAlphaNumerical && username.Length >= 5 && username.Length <= 20;
 		return isValid;
 	}
+
+	/// <summary>
+	/// Verifies the password is at least 8 characters long and include at least one special character.
+	/// </summary>
+	/// <param name="password"></param>
 	public bool IsValidPassword(string password)
 	{
 		bool isValid = false;
@@ -44,8 +49,15 @@ public class UserRegistration
 		isValid = thereIsASpecialCharacter && password.Length >= 8;
 		return isValid;
 	}
+
+	/// <summary>
+	/// Verifies the email address adheres to a valid format
+	/// </summary>
+	/// <param name="email"></param>
 	public bool IsValidEmail(string email)
 	{
-		return false;
+		string emailPattern = @"^[^\s@]+@[^\s.]+\.[^\s.]+$";
+		bool emailIsValid = Regex.IsMatch(email, emailPattern);
+		return emailIsValid;
 	}
 }
