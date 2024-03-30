@@ -1,0 +1,24 @@
+
+1. Challenges:
+
+In my experience the big challenge with TDD is to think about wwhat your program should do, and how it will behave in certain situations, before the program actually exists. 
+It is a big challenge when you are just starting out, but with some practice i personally find it very gratifying, and once you have the first tests written down,
+everything else follows quite naturally, and it feels that thinking ahead of time like this makes the code more robust at the end, so i find it totally worth it.
+
+2. What i have learned:
+
+I have learned to look at the code from a different perspective, a more hollistic one, and i have learned to think about what i want the code to deliver,
+and where it could go wrong, so that to make sure it behaves as i expect when i finally write it.
+I have learnes how test works, their syntax, and how to separate what i want to test in different test methods in order to isolate the testing in to fragmented 
+bits of my program, ie methods, and make every test as independent as possible, so that i can test that just this segment of code works, before proceeding to the next,
+and gradually building my application as i go forward with the testing.
+
+3. Considerations and asumptions:
+
+I have made some asumptions as to make testing more easy, for example, i made the list of users public, so that i can add users manually in order to test certain situations.
+This works well, and make my tests very independent, so that i dont need to use other methods except the one i am testing, but this situation maybe does not so well reflect
+a real scenario, where i probably wont have this degree of free aceess to the code. That being said, i think it is a good place to start, and writing tests for more complex 
+applications will obviously be more challenging, but i have the confidence that with the basics i have learned here, i will have the tools to tackle more complex problems,
+and the determination to find out how to solve the situations i dont yet have the tools for.
+
+I am very happy with the result, and really enjoyed the process.

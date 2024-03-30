@@ -85,6 +85,7 @@ public class UserRegistration
 	/// <param name="email"></param>
 	public bool IsValidEmail(string email)
 	{
+		//This email regex pattern represents: (non @ nor whitespace)@(non . nor whitespace).(non . nor whitespace)
 		string emailPattern = @"^[^\s@]+@[^\s.]+\.[^\s.]+$";
 		bool emailIsValid = Regex.IsMatch(email, emailPattern);
 		return emailIsValid;
